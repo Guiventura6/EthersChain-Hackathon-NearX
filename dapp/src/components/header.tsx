@@ -3,31 +3,45 @@
 import Link from "next/link";
 import styles from "./header.module.css";
 import { ChangeEvent, useState, useEffect } from "react";
+import { login } from "@/services/web3Services";
 
 export default function Header() {
   const [wallet, setWallet] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   useEffect(() => {
     const wallet = localStorage.getItem("wallet");
     if (wallet) setWallet(wallet);
   }, []);
 
   function btnLoginClick() {
-    setWallet("0x511...13D2");
-    localStorage.setItem("wallet", "0x511");
+    setMessage("Logging In...");
+    login()
+      .then((wallet) => {
+        setWallet(wallet);
+        localStorage.setItem("wallet", wallet);
+        setMessage("");
+      })
+      .catch((err) => setMessage(err.message));
   }
 
   function btnLogoutClick() {
+    setMessage("Logging Out...");
     setWallet("");
     localStorage.removeItem("wallet");
+    setMessage("");
   }
 
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
-        <Link href={"/"}>Album</Link>
+        <Link href={"/album"}>Album</Link>
         <Link href={"/loja"}>Loja</Link>
-        <Link href={"/trocar"}>Trocar repetidas</Link>
-        <p>Carteira: {wallet}</p>
+        <Link href={"/trocar"}>Trocar Figurinhas</Link>
+        <p>
+          Carteira:{" "}
+          {`${wallet.substring(0, 4)}...${wallet.substring(wallet.length - 4)}`}
+        </p>
         {!wallet ? (
           <button
             id="btnLogin"
