@@ -1,7 +1,7 @@
 export default function Login() {
   return (
-    <main>
+    <section>
       <h1>Conectar MetaMask</h1>
-    </main>
+    </section>
   );
 }

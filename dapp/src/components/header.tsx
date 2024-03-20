@@ -1,8 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./header.module.css";
+import { ChangeEvent, useState, useEffect } from "react";
 
-export default async function Header() {
-  const user = false;
+export default function Header() {
+  const [wallet, setWallet] = useState<string>("");
+  useEffect(() => {
+    const wallet = localStorage.getItem("wallet");
+    if (wallet) setWallet(wallet);
+  }, []);
+
+  function btnLoginClick() {
+    setWallet("0x511...13D2");
+    localStorage.setItem("wallet", "0x511");
+  }
+
+  function btnLogoutClick() {
+    setWallet("");
+    localStorage.removeItem("wallet");
+  }
 
   return (
     <header className={styles.header}>
@@ -10,18 +27,23 @@ export default async function Header() {
         <Link href={"/"}>Album</Link>
         <Link href={"/loja"}>Loja</Link>
         <Link href={"/trocar"}>Trocar repetidas</Link>
-        {user ? (
-          <>
-            <Link className={styles.login} href={"/login"}>
-              0x123099483910129
-            </Link>
-          </>
+        <p>Carteira: {wallet}</p>
+        {!wallet ? (
+          <button
+            id="btnLogin"
+            onClick={btnLoginClick}
+            className={styles.login}
+          >
+            LogIn
+          </button>
         ) : (
-          <>
-            <Link className={styles.login} href={"/login"}>
-              Conectar Metamask
-            </Link>
-          </>
+          <button
+            className={styles.login}
+            id="btnLogout"
+            onClick={btnLogoutClick}
+          >
+            LogOut
+          </button>
         )}
       </nav>
     </header>
