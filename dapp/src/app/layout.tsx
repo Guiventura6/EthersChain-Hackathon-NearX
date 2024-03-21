@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import "./globals.css";
 import { type_second } from "@/functions/fonts";
+import Footer from "@/components/footer";
 
 export const metadata = {
   title: "CompletaCopa 3.0",
@@ -15,8 +16,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={type_second.variable}>
-        <Header />
-        {children}
+        <div className="App">
+          <Header />
+          <main className="AppBody">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

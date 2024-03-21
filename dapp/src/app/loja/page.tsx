@@ -1,7 +1,7 @@
 export default function Loja() {
   return (
-    <main>
-      <h1>Loja</h1>
-    </main>
+    <section className="container mainContainer">
+      <div className="title">Loja</div>
+    </section>
   );
 }

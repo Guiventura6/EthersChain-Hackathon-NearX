@@ -1,7 +1,7 @@
 export default function Trocar() {
   return (
-    <main>
-      <h1>Trocar Figurinhas</h1>
-    </main>
+    <section className="container mainContainer">
+      <div className="title">Trocar Figurinhas</div>
+    </section>
   );
 }

@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <main>
+    <section className="container mainContainer">
       <h1>Album</h1>
-    </main>
+    </section>
   );
 }

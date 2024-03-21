@@ -1,7 +1,18 @@
-export default function Album() {
+import stickersGet from "@/actions/stickers-get";
+import CollectiblesAlbum from "@/components/collectibles/collectibles-album";
+
+export default async function Album() {
+  const data = await stickersGet();
+
   return (
-    <main>
-      <h1>Meu Album</h1>
-    </main>
+    <>
+      <section className="container">
+        <div className="title">Album</div>
+      </section>
+
+      <section className="container mainContainer">
+        <CollectiblesAlbum stickers={data} />
+      </section>
+    </>
   );
 }
