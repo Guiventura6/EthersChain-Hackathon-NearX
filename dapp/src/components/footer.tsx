@@ -5,12 +5,12 @@ export default async function Footer() {
   return (
     <footer className={styles.footer}>
       <Image
-        src={"/assets/dogs-footer.svg"}
-        alt="Dogs"
+        src={"/assets/metamask.svg"}
+        alt="MetaMask"
         width={28}
         height={22}
       />
-      <p>Dogs. Alguns direitos reservados.</p>
+      <p>CompletaCompa 3.0 - Alguns direitos reservados.</p>
     </footer>
   );
 }

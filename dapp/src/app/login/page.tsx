@@ -1,7 +1,10 @@
+import LoginForm from "@/components/login/login-form";
+
 export default function Login() {
   return (
-    <section>
-      <h1>Conectar MetaMask</h1>
+    <section className="animeLeft">
+      <h1 className="title">Mintar Figurinha</h1>
+      <LoginForm />
     </section>
   );
 }
