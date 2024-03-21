@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { ethers, Contract, Transaction } from "ethers";
 import ABI from "./ABI.json";
 
 const CONTRACT_ADDRESS: string = `${process.env.CONTRACT_ADDRESS}`;
@@ -14,11 +14,27 @@ export async function login(): Promise<string> {
 
   if (!accounts || !accounts.length) throw new Error(`Wallet not permitted!`);
 
+  /*
   await provider.send("wallet_switchEthereumChain", [
     {
       chainId: ethers.toBeHex(CHAIN_ID),
     },
   ]);
+  */
 
   return accounts[0];
+}
+
+export async function mint(idFigurinha: number): Promise<string | null> {
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+
+  const signer = await provider.getSigner();
+  const instance = contract.connect(signer) as Contract;
+
+  const value = NFT_PRICE;
+
+  const tx = (await instance.mint(idFigurinha, { value })) as Transaction;
+
+  return tx.hash;
 }

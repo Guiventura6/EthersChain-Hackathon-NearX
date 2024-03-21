@@ -1,8 +1,8 @@
 "use client";
 
-import login from "@/actions/login";
 import { useFormState, useFormStatus } from "react-dom";
 import Button from "@/components/forms/button";
+import login from "@/actions/login";
 
 function FormButton() {
   const { pending } = useFormStatus();
@@ -11,7 +11,7 @@ function FormButton() {
       {pending ? (
         <Button disabled={pending}>Mintando...</Button>
       ) : (
-        <Button>Mintar</Button>
+        <Button>Comprar</Button>
       )}
     </>
   );
@@ -32,7 +32,6 @@ export default function LoginForm() {
           name="idFigurinha"
           placeholder="Id Figurinha"
         ></input>
-        <input type="number" name="quantidade" placeholder="Quantidade"></input>
         <FormButton />
         <p>{state.error}</p>
       </form>
