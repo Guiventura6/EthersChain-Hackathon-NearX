@@ -15,7 +15,7 @@ contract AlbumNFT is ERC1155, ERC1155Burnable {
     uint public tokenPrice = 0.01 ether;
 
     string public constant BASE_URL =
-        "ipfs://QmWzvvmzxwYiYsBPpKgZ5cn2L7JTTQh4p9TVDrCF2WrTG1/";
+        "ipfs://QmNW914SvRZ8sWRTPNLf98AX3xAyVToDmwJ8kz9XeZLWDD/";
 
     address payable public immutable owner;
 
