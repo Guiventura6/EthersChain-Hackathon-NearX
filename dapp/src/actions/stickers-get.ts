@@ -9,7 +9,7 @@ export type Sticker = {
 
 export default async function stickersGet() {
   const response = await fetch(
-    "https://jade-eldest-pike-94.mypinata.cloud/ipfs/QmZBD3v8g57uvWt4k8nQD7xfuxKi9JQF1eNo79kMBhGNtP/colecao1.json"
+    "https://jade-eldest-pike-94.mypinata.cloud/ipfs/QmcYEhmxd8d8MxRmuHxejjeZkVbaJwqjRjcd2oDr7v4U5J/colecao1.json"
   );
   const data = (await response.json()) as Sticker[];
   return data;

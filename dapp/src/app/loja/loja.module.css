@@ -9,7 +9,7 @@
 .login::before {
   display: block;
   content: "";
-  background: url("/assets/0.jpg") no-repeat center center;
+  background: url("/assets/2.jpeg") no-repeat center center;
   background-size: cover;
 }
 
