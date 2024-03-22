@@ -5,7 +5,7 @@
 body {
   padding-top: 4rem;
   margin: 0px;
-  color: #333;
+  color: #000000;
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: var(--type-second-spectral), Georgia;
   font-family: var(--type-first);
@@ -37,12 +37,12 @@ input {
   display: block;
   font-size: 1rem;
   font-family: var(--type-first);
-  color: #333;
+  color: #000000;
 }
 
 a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
 }
 
 .container {
@@ -69,7 +69,7 @@ a {
   display: block;
   width: 1.5rem;
   height: 1.5rem;
-  background: #fb1;
+  background: chartreuse;
   position: absolute;
   bottom: 5px;
   left: -5px;
