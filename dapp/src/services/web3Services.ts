@@ -38,3 +38,22 @@ export async function mint(idFigurinha: number): Promise<string | null> {
 
   return tx.hash;
 }
+
+export async function trocar(
+  idFigurinha: number,
+  endereco: string
+): Promise<string | null> {
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+
+  const signer = await provider.getSigner();
+  const instance = contract.connect(signer) as Contract;
+
+  const hexEndereco = ethers.isAddress(endereco);
+
+  const tx = (await instance.transferNFT(
+    hexEndereco,
+    idFigurinha
+  )) as Transaction;
+  return tx.hash;
+}

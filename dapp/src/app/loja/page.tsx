@@ -40,16 +40,9 @@ export default function Loja() {
               placeholder="Id Figurinha"
               onChange={onQuantityChange}
             />
-            <input
-              id="Contract"
-              type="number"
-              name="Contract"
-              placeholder="Contract"
-              onChange={onQuantityChange}
-            />
           </label>
         </p>
-        
+
         <p>
           <button id="btnMint" className={styles.button} onClick={btnMintClick}>
             Comprar
