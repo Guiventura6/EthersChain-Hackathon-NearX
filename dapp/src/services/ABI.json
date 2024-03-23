@@ -181,21 +181,21 @@
   },
   {
     "inputs": [],
-    "name": "NFT_0",
+    "name": "Figurinha_0",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "NFT_1",
+    "name": "Figurinha_1",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "NFT_2",
+    "name": "Figurinha_2",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
