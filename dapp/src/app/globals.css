@@ -69,7 +69,7 @@ a {
   display: block;
   width: 1.5rem;
   height: 1.5rem;
-  background: chartreuse;
+  background: rgb(0, 167, 0);
   position: absolute;
   bottom: 5px;
   left: -5px;

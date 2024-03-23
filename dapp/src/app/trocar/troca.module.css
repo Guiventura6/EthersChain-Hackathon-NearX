@@ -1,0 +1,59 @@
+.login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    gap: 2rem;
+    width: 80vw;
+  }
+  
+  .login::before {
+    display: block;
+    content: "";
+    background: url("/assets/2.jpeg") no-repeat center center;
+    background-size: cover;
+  }
+  
+  .forms {
+    max-width: 30rem;
+    padding: 1rem;
+    margin-top: 20vh;
+  }
+  
+  @media (max-width: 40rem) {
+    .login {
+      grid-template-columns: 1fr;
+    }
+    .login::before {
+      display: none;
+    }
+    .forms {
+      max-width: 100%;
+    }
+  }
+  
+  .button {
+    font-size: 1rem;
+    font-family: var(--type-first);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.4rem;
+    background: rgb(0, 167, 0);
+    color: #000000;
+    min-width: 8rem;
+    padding: 0.8rem 1.2rem;
+    box-sizing: border-box;
+    transition: 0.1s;
+    margin-top: 25px;
+  }
+  
+  .button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(255, 204, 0), 0 0 0 4px rgb(0, 167, 0);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+  
